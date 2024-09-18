@@ -1,0 +1,43 @@
+using System.Collections.Generic;
+
+Console.WriteLine("Copyright 2024 Agustín Illecas");
+Console.WriteLine("******ECUACION CUADRATICA******");
+Console.WriteLine("Ingrese 'a'");
+int a  = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ingrese 'b'");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ingrese 'c'");
+int c = Convert.ToInt32(Console.ReadLine());
+if (a == 0)
+{
+    Console.WriteLine("a no puede ser 0");
+}
+else
+{
+    double di = Math.Pow(b, 2) - 4 * a * c;
+    Console.WriteLine("discriminante: " + di);
+    if (di < 0)
+    {
+        Console.WriteLine("No tiene respuesta");
+    }
+    else
+    {
+        if (di == 0)
+        {
+            double x1 = (-b + Math.Sqrt(di)) / 2 * a;
+            Console.WriteLine("Solo hay una respuesta");
+            Console.WriteLine("x: " + x1.ToString("00.00"));
+        }
+        else
+        {
+            Console.WriteLine("Tiene dos respuestas");
+            double x1 = (-b + Math.Sqrt(di)) / 2 * a;
+            Console.WriteLine("x1: " + x1.ToString("00.00"));
+            double x2 = (-b - Math.Sqrt(di)) / 2 * a;
+            Console.WriteLine("x2: " + x2.ToString("00.00"));
+        }
+    }
+}
+
+Console.WriteLine("Presione enter para salir");
+Console.ReadLine();
